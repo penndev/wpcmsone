@@ -1,0 +1,279 @@
+/*
+    Theme Name: penndev
+    Theme URI: github.com/penndev/wpcmsone
+    Description: a sample template for wordpress  
+    Version: 1.0
+*/
+
+$primaryColor : #000000;
+$primaryBgColor : #ffffff;
+$primaryBorderColor: #eeeeee;
+$primaryInfoColor : #666666;
+
+$lableBgColor: #2997f7;
+
+
+@mixin boxZero () {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin flexMain($p:center) {
+    display: flex;
+    align-items: center;
+    justify-content: $p;
+}
+
+@mixin postIcon($url) {
+    display: flex;
+    align-items: center;
+    &::before {
+        width: 1rem;
+        height: 1rem;
+        content: ' ';
+        display: inline-block;
+        background: url($url)  no-repeat center;
+        background-size: contain;
+    }
+}
+
+@mixin commentItem {
+    border: 0;
+    margin: 5px 0;
+    padding: 0;
+    font-size: 0.8rem;
+    color: $primaryInfoColor;
+    label {
+        display: inline-block;
+        min-width: 120px;
+    }
+}
+
+body {
+    @include boxZero();
+    background-image: url(../image/bg.jpg);
+    color: $primaryColor;
+}
+
+.navigation {
+    height: 80px;
+    background-color: $primaryBgColor;
+    border-bottom: 1px solid $primaryBorderColor;
+    .menu {
+        width: 100%;
+        height: 100%;
+        ul {
+            @include boxZero();
+            @include flexMain(space-around);
+            height: 100%;
+            margin: 0 auto;
+            width: 80%;
+            min-width: 960px;
+            list-style: none;
+            a {
+                font-size: 1rem;
+                font-weight: 500;
+                outline: 0; 
+                text-decoration: none;
+                color: #222222;
+                &:hover {
+                    color: $lableBgColor;
+                }
+            }
+            .current_page_item a {
+                padding: 5px 8px;
+                border-radius: 3px;
+                background-color: $lableBgColor;
+                color: $primaryBgColor;
+                text-decoration: none;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.search {
+    @include flexMain();
+    height: 60px;
+    text-align: center;
+    .search-group {
+        background-color: $primaryBgColor;
+        height: 30px;
+        width: 20%;
+        min-width: 260px;
+        @include flexMain(space-around);
+    }
+    input {
+        @include boxZero();
+        outline: none;
+        background-color: $primaryBgColor;
+    }
+}
+
+.footer {
+    height: 60px;
+    width: 100%;
+    background-color: $primaryBgColor;
+    border-top: 1px solid $primaryBorderColor;
+    @include flexMain();
+    .bottom {
+        width: 80%;
+        min-width: 960px;
+    }
+}
+
+.posts {
+    margin: 10px auto;
+    width: 60%;
+    min-width: 960px;
+    .post {
+        margin-top: 20px;
+        background-color: $primaryBgColor;
+        border: 1px solid $primaryBorderColor;
+        border-radius: 4px;
+        padding: 8px 6px;
+        display: flex;
+        .post-image {
+            object-fit: cover;
+            width: 220px;
+            height: 160px;
+            overflow: hidden;
+            margin-right: 20px;
+            border-radius: 12px;
+        }
+        .post-meta {
+            box-sizing: border-box;
+            flex: 1;
+            .post-title {
+                font-size: 1.2rem;
+                font-weight: 500;
+                outline: 0;
+                a {
+                    text-decoration: none;
+                    color: #111111;
+                    &:hover {
+                        color: #409eff
+                    }
+                }
+            }
+            .post-excerpt {
+                margin-top: 6px;
+                color: $primaryInfoColor;
+                height: 85px;
+            }
+            .post-plus {
+                display: flex;
+                .tags {
+                    display: flex;
+                    a {
+                        padding: 3px 5px;
+                        border-radius: 2px;
+                        background-color: $lableBgColor;
+                        color: $primaryBgColor;
+                        text-decoration: none;
+                        font-size: 0.8rem;
+                        margin-right: 5px;
+                    }
+                }
+                .icon-comment {
+                    margin-left: 10px;
+                    @include postIcon('../svg/comment.svg');
+                }
+                .icon-date {
+                    margin-left: 20px;
+                    @include postIcon('../svg/date.svg');
+                }
+            }
+        }
+    }
+}
+
+.comments {
+    background-color: $primaryBgColor;
+    padding: 12px;
+    .comments-title {
+        border-left: 5px solid $lableBgColor;
+        font-size: 1.2rem;
+        padding-left: 12px;
+        font-weight: 600;
+    }
+    .comment {
+        list-style: none;
+        margin-top: 15px;
+        border-top: 1px solid $primaryBorderColor;
+        .comment-body {
+            margin: 20px 0;
+            .comment-author {
+                width: 100%;
+                height: 40px;
+                @include flexMain(start);
+                .avatar {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 30px;
+                    margin-right: 8px;
+                }
+            }
+            .comment-meta {
+                display: flex;
+                justify-content: space-between;
+                .comment-time {
+                    @include postIcon('../svg/date.svg');
+                }
+                .comment-reply-link {
+                    color: $primaryInfoColor;
+                    background-color:  $primaryBorderColor;
+                    font-size: 0.9rem;
+                    padding: 4px 6px;
+                    outline: 0; 
+                    text-decoration: none;
+                    &:hover {
+                        color: $lableBgColor;
+                        border-color: $lableBgColor;
+                    }
+                }
+            }
+
+        }
+    }
+    .comment-respond {
+        margin-top: 20px;
+        border-top: 1px solid $primaryBorderColor;
+        padding-top: 8px;
+        .comment-notes {
+            color: $primaryInfoColor;
+            font-size: 0.8rem;
+        }
+        .comment-form-comment {
+            margin: 5px 0;
+            textarea {
+                width: 100%;
+                height: 80px;
+                border: 1px solid $lableBgColor;
+                border-radius: 8px;
+                padding: 8px;
+                color: $primaryInfoColor;
+                outline: 0; 
+            }
+        }
+        .form-submit {
+            text-align: right;
+            input, button {
+                @include boxZero();
+                color: $primaryBgColor;
+                background-color: $lableBgColor;
+                border: 1px solid $primaryInfoColor;
+                border-radius: 3px;
+                font-size: 1rem;
+                padding: 6px 8px;
+                outline: 0; 
+                text-decoration: none;
+
+            }
+        }
+        .comment-form-author,.comment-form-email,.comment-form-url,.comment-form-cookies-consent {
+            @include commentItem()
+        }
+    }
+}

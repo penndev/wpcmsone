@@ -1,0 +1,324 @@
+/*
+    Theme Name: penndev
+    Theme URI: github.com/penndev/wpcmsone
+    Description: a sample template for wordpress  
+    Version: 1.0
+*/
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-image: url(../image/bg.jpg);
+  color: #000000;
+}
+
+.navigation {
+  height: 80px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.navigation .menu {
+  width: 100%;
+  height: 100%;
+}
+
+.navigation .menu ul {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  margin: 0 auto;
+  width: 80%;
+  min-width: 960px;
+  list-style: none;
+}
+
+.navigation .menu ul a {
+  font-size: 1rem;
+  font-weight: 500;
+  outline: 0;
+  text-decoration: none;
+  color: #222222;
+}
+
+.navigation .menu ul a:hover {
+  color: #2997f7;
+}
+
+.navigation .menu ul .current_page_item a {
+  padding: 5px 8px;
+  border-radius: 3px;
+  background-color: #2997f7;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  text-align: center;
+}
+
+.search .search-group {
+  background-color: #ffffff;
+  height: 30px;
+  width: 20%;
+  min-width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.search input {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.footer {
+  height: 60px;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .bottom {
+  width: 80%;
+  min-width: 960px;
+}
+
+.posts {
+  margin: 10px auto;
+  width: 60%;
+  min-width: 960px;
+}
+
+.posts .post {
+  margin-top: 20px;
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  padding: 8px 6px;
+  display: flex;
+}
+
+.posts .post .post-image {
+  object-fit: cover;
+  width: 220px;
+  height: 160px;
+  overflow: hidden;
+  margin-right: 20px;
+  border-radius: 12px;
+}
+
+.posts .post .post-meta {
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.posts .post .post-meta .post-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  outline: 0;
+}
+
+.posts .post .post-meta .post-title a {
+  text-decoration: none;
+  color: #111111;
+}
+
+.posts .post .post-meta .post-title a:hover {
+  color: #409eff;
+}
+
+.posts .post .post-meta .post-excerpt {
+  margin-top: 6px;
+  color: #666666;
+  height: 85px;
+}
+
+.posts .post .post-meta .post-plus {
+  display: flex;
+}
+
+.posts .post .post-meta .post-plus .tags {
+  display: flex;
+}
+
+.posts .post .post-meta .post-plus .tags a {
+  padding: 3px 5px;
+  border-radius: 2px;
+  background-color: #2997f7;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin-right: 5px;
+}
+
+.posts .post .post-meta .post-plus .icon-comment {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.posts .post .post-meta .post-plus .icon-comment::before {
+  width: 1rem;
+  height: 1rem;
+  content: ' ';
+  display: inline-block;
+  background: url("../svg/comment.svg") no-repeat center;
+  background-size: contain;
+}
+
+.posts .post .post-meta .post-plus .icon-date {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.posts .post .post-meta .post-plus .icon-date::before {
+  width: 1rem;
+  height: 1rem;
+  content: ' ';
+  display: inline-block;
+  background: url("../svg/date.svg") no-repeat center;
+  background-size: contain;
+}
+
+.comments {
+  background-color: #ffffff;
+  padding: 12px;
+}
+
+.comments .comments-title {
+  border-left: 5px solid #2997f7;
+  font-size: 1.2rem;
+  padding-left: 12px;
+  font-weight: 600;
+}
+
+.comments .comment {
+  list-style: none;
+  margin-top: 15px;
+  border-top: 1px solid #eeeeee;
+}
+
+.comments .comment .comment-body {
+  margin: 20px 0;
+}
+
+.comments .comment .comment-body .comment-author {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.comments .comment .comment-body .comment-author .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin-right: 8px;
+}
+
+.comments .comment .comment-body .comment-meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comments .comment .comment-body .comment-meta .comment-time {
+  display: flex;
+  align-items: center;
+}
+
+.comments .comment .comment-body .comment-meta .comment-time::before {
+  width: 1rem;
+  height: 1rem;
+  content: ' ';
+  display: inline-block;
+  background: url("../svg/date.svg") no-repeat center;
+  background-size: contain;
+}
+
+.comments .comment .comment-body .comment-meta .comment-reply-link {
+  color: #666666;
+  background-color: #eeeeee;
+  font-size: 0.9rem;
+  padding: 4px 6px;
+  outline: 0;
+  text-decoration: none;
+}
+
+.comments .comment .comment-body .comment-meta .comment-reply-link:hover {
+  color: #2997f7;
+  border-color: #2997f7;
+}
+
+.comments .comment-respond {
+  margin-top: 20px;
+  border-top: 1px solid #eeeeee;
+  padding-top: 8px;
+}
+
+.comments .comment-respond .comment-notes {
+  color: #666666;
+  font-size: 0.8rem;
+}
+
+.comments .comment-respond .comment-form-comment {
+  margin: 5px 0;
+}
+
+.comments .comment-respond .comment-form-comment textarea {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #2997f7;
+  border-radius: 8px;
+  padding: 8px;
+  color: #666666;
+  outline: 0;
+}
+
+.comments .comment-respond .form-submit {
+  text-align: right;
+}
+
+.comments .comment-respond .form-submit input, .comments .comment-respond .form-submit button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background-color: #2997f7;
+  border: 1px solid #666666;
+  border-radius: 3px;
+  font-size: 1rem;
+  padding: 6px 8px;
+  outline: 0;
+  text-decoration: none;
+}
+
+.comments .comment-respond .comment-form-author, .comments .comment-respond .comment-form-email, .comments .comment-respond .comment-form-url, .comments .comment-respond .comment-form-cookies-consent {
+  border: 0;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 0.8rem;
+  color: #666666;
+}
+
+.comments .comment-respond .comment-form-author label, .comments .comment-respond .comment-form-email label, .comments .comment-respond .comment-form-url label, .comments .comment-respond .comment-form-cookies-consent label {
+  display: inline-block;
+  min-width: 120px;
+}
